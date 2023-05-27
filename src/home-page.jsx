@@ -1,3 +1,4 @@
+import { useReducer } from "react";
 import { Link } from "react-router-dom";
 import Rectangle from "./assest/Rectangle.png";
 import Ellipse from "./assest/Ellipse.png";
@@ -12,9 +13,33 @@ import madeBy from "./assest/madeBy.png";
 import Gallery from "./assest/Gallery.png";
 
 export default function HomePage() {
-  function handleClick() {
-    console.log("Icon is clicked");
-  }
+  const initialState = 0;
+  const reducer = (state, action) => {
+    switch (action) {
+      case 1:
+        return 1;
+
+      case 2:
+        return 2;
+
+      case 3:
+        return 3;
+
+      case 4:
+        return 4;
+
+      case 5:
+        return 5;
+
+      case 6:
+        return 6;
+
+      default:
+        return state;
+    }
+  };
+  const [iconValue, dispatch] = useReducer(reducer, initialState);
+
   return (
     <div>
       <div className="home-content-st">
@@ -47,23 +72,22 @@ export default function HomePage() {
             src={linkedin}
             alt="linkedin"
             className="lincked-in ic"
-            onClick={handleClick}
+            onClick={() => {
+              dispatch(1);
+            }}
           />
         </Link>
         <Link to="/contact">
-          <img
-            src={Ellipse}
-            alt="Ellipse"
-            className="icon-ellipse-st ell"
-            onClick={handleClick}
-          />
+          <img src={Ellipse} alt="Ellipse" className="icon-ellipse-st ell" />
         </Link>
         <Link to="/contact">
           <img
             src={whatsapp}
             alt="whatsapp"
             className="whatsapp ic"
-            onClick={handleClick}
+            onClick={() => {
+              dispatch(2);
+            }}
           />
         </Link>
         <Link to="/contact">
@@ -71,7 +95,9 @@ export default function HomePage() {
             src={zoom}
             alt="zoom"
             className="zoom ic"
-            onClick={handleClick}
+            onClick={() => {
+              dispatch(3);
+            }}
           />
         </Link>
         <Link to="/contact">
@@ -79,23 +105,22 @@ export default function HomePage() {
             src={instagram}
             alt="instagram"
             className="instagram ic"
-            onClick={handleClick}
+            onClick={() => {
+              dispatch(4);
+            }}
           />
         </Link>
         <Link to="/contact">
-          <img
-            src={Ellipse}
-            alt="Ellipse"
-            className="icon-ellipse-nd ell"
-            onClick={handleClick}
-          />
+          <img src={Ellipse} alt="Ellipse" className="icon-ellipse-nd ell" />
         </Link>
         <Link to="/contact">
           <img
             src={twitter}
             alt="twitter"
             className="twitter ic"
-            onClick={handleClick}
+            onClick={() => {
+              dispatch(5);
+            }}
           />
         </Link>
         <Link to="/contact">
@@ -103,7 +128,9 @@ export default function HomePage() {
             src={email}
             alt="email"
             className="email ic"
-            onClick={handleClick}
+            onClick={() => {
+              dispatch(6);
+            }}
           />
         </Link>
       </div>
