@@ -12,10 +12,12 @@ import up from "./assest/up.png";
 import down from "./assest/down.png";
 import Footer from "./footer";
 
-export default function Contact() {
+export default function Contact(props) {
   const [budjetToggle, setBudjetToggle] = useState(false);
   const [budjetValue, setBudjetValue] = useState(0);
   const [iconChoose, setIconChoose] = useState(1);
+  console.log(budjetValue);
+
   let iconChoosing = () => {
     if (iconChoose === 1) {
       return (
@@ -128,7 +130,7 @@ export default function Contact() {
           <p className="contact-parag-st">
             you can write a brief paragraph explaining what you want in your
             message, and you can also <br /> attach any relevant links
-            throughout your message. Additionally, if you would like to set a{" "}
+            throughout your message. Additionally, if you would like to set a
             <br /> budget for your request, simply click on the money icon
             below. <br /> When it comes to attaching files, please keep in mind
             the following guidelines: <br />

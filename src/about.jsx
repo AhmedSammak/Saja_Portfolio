@@ -16,7 +16,7 @@ export default function About() {
         projects. These include examples of my work in UX/UI design, graphic
         design, and digital illustration. I hope that as you take a look around,
         you'll get a sense of
-        <span class="about-span-nd">my design philosophy and style .</span>
+        <span class="about-span-nd"> my design philosophy and style .</span>
         <br />
         But my website isn't just about showcasing my work - I'm also here to
         help you with any design-related questions or challenges you may have.

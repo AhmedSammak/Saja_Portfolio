@@ -39,7 +39,7 @@ export default function HomePage() {
     }
   };
   const [iconValue, dispatch] = useReducer(reducer, initialState);
-
+  console.log(iconValue);
   return (
     <div>
       <div className="home-content-st">
@@ -67,24 +67,22 @@ export default function HomePage() {
         <h1 className="home-head-nd">Let's grab some coffee!</h1>
       </div>
       <div className="home-icons">
-        <Link to="/contact">
+        <Link to="/Contact">
           <img
             src={linkedin}
             alt="linkedin"
-            className="lincked-in ic"
+            className="linkedinH ic"
             onClick={() => {
               dispatch(1);
             }}
           />
         </Link>
-        <Link to="/contact">
-          <img src={Ellipse} alt="Ellipse" className="icon-ellipse-st ell" />
-        </Link>
+        <img src={Ellipse} alt="Ellipse" className="icon-ellipse-st ell" />
         <Link to="/contact">
           <img
             src={whatsapp}
             alt="whatsapp"
-            className="whatsapp ic"
+            className="whatsappH ic"
             onClick={() => {
               dispatch(2);
             }}
@@ -94,7 +92,7 @@ export default function HomePage() {
           <img
             src={zoom}
             alt="zoom"
-            className="zoom ic"
+            className="zoomH ic"
             onClick={() => {
               dispatch(3);
             }}
@@ -104,20 +102,18 @@ export default function HomePage() {
           <img
             src={instagram}
             alt="instagram"
-            className="instagram ic"
+            className="instagramH ic"
             onClick={() => {
               dispatch(4);
             }}
           />
         </Link>
-        <Link to="/contact">
-          <img src={Ellipse} alt="Ellipse" className="icon-ellipse-nd ell" />
-        </Link>
+        <img src={Ellipse} alt="Ellipse" className="icon-ellipse-nd ell" />
         <Link to="/contact">
           <img
             src={twitter}
             alt="twitter"
-            className="twitter ic"
+            className="twitterH ic"
             onClick={() => {
               dispatch(5);
             }}
@@ -127,7 +123,7 @@ export default function HomePage() {
           <img
             src={email}
             alt="email"
-            className="email ic"
+            className="emailH ic"
             onClick={() => {
               dispatch(6);
             }}

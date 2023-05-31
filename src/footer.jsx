@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import wemail from "./assest/wemail.svg";
 import wzoom from "./assest/wzoom.svg";
 import wwhatsapp from "./assest/wwhatsapp.svg";
@@ -7,9 +8,9 @@ import winstagram from "./assest/winstagram.svg";
 import wgallery from "./assest/wgallery.png";
 import wmadeBy from "./assest/wmade-by.png";
 
-export default function Footer() {
+export default function Footer({ classDown }) {
   return (
-    <>
+    <div className={classDown}>
       <div className="footer-content">
         <div className="footer-line-top"></div>
         <div className="footer-component">
@@ -28,12 +29,24 @@ export default function Footer() {
           </div>
           <div className="footer-component-right">
             <div className="footer-icons-container">
-              <img src={wlinkedin} alt="icon" className="footer-first-icon" />
-              <img src={wwhatsapp} alt="icon" className="footer-icon" />
-              <img src={wzoom} alt="icon" className="footer-icon" />
-              <img src={winstagram} alt="icon" className="footer-icon" />
-              <img src={wtwitter} alt="icon" className="footer-icon" />
-              <img src={wemail} alt="icon" className="footer-icon" />
+              <Link to="/contact">
+                <img src={wlinkedin} alt="icon" className="footer-first-icon" />
+              </Link>
+              <Link to="/contact">
+                <img src={wwhatsapp} alt="icon" className="footer-icon" />
+              </Link>
+              <Link to="/contact">
+                <img src={wzoom} alt="icon" className="footer-icon" />
+              </Link>
+              <Link to="/contact">
+                <img src={winstagram} alt="icon" className="footer-icon" />
+              </Link>
+              <Link to="/contact">
+                <img src={wtwitter} alt="icon" className="footer-icon" />
+              </Link>
+              <Link to="/contact">
+                <img src={wemail} alt="icon" className="footer-icon" />
+              </Link>
             </div>
             <p className="footer-parag-st">
               Thank you for visiting our website! We hope you had a pleasant
@@ -48,6 +61,6 @@ export default function Footer() {
 
         <div className="footer-line-bottom"></div>
       </div>
-    </>
+    </div>
   );
 }
