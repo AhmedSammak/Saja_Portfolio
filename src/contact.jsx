@@ -12,7 +12,7 @@ import up from "./assest/up.png";
 import down from "./assest/down.png";
 import Footer from "./footer";
 
-export default function Contact(props) {
+export default function Contact() {
   const [budjetToggle, setBudjetToggle] = useState(false);
   const [budjetValue, setBudjetValue] = useState(0);
   const [iconChoose, setIconChoose] = useState(1);

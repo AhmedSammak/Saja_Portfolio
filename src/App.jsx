@@ -1,6 +1,6 @@
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
-
+import { Route, Routes, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Navbar from "./nav";
 import ProjectsPage from "./projects/projectsPage";
 import UxProjects from "./projects/uxProjects";
@@ -13,10 +13,15 @@ import ProductDesignSketches from "./projects/productDesignSketches";
 import EmptyProjectPage from "./projects/emptyProjectPage";
 import SingleProjectPage from "./projects/singleProjectPage";
 function App() {
+  const { pathName } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathName]);
   return (
     <>
       <Navbar />
       <Routes>
+        {window.scrollTo({ top: 0, behavior: "smooth" })}
         <Route path="/Projectspage" element={<ProjectsPage />} />
         <Route path="/UxProjects" element={<UxProjects />} />
         <Route path="/UiProjects" element={<UiProjects />} />

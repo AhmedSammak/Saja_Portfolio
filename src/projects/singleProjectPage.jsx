@@ -1,11 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Ellips from "../assest/Ellipse.png";
 import emptybottom from "../assest/empty-bottom.png";
 import thank from "../assest/thanking.png";
 import Footer from "../footer";
 
 export default function SingleProjectPage() {
+  const [scroll, setScroll] = useState(0);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [scroll]);
+
   return (
     <>
       <div>
@@ -38,7 +44,14 @@ export default function SingleProjectPage() {
         <img src={emptybottom} alt="pic" className="oneproject-img4" />
         <img src={emptybottom} alt="pic" className="oneproject-img5" />
         <img src={emptybottom} alt="pic" className="oneproject-img6" />
-        <img src={thank} alt="pic" className="oneproject-thank" />
+        <img
+          src={thank}
+          alt="pic"
+          className="oneproject-thank"
+          onClick={() => {
+            setScroll(scroll + 1);
+          }}
+        />
       </div>
       <div className="oneproject-footer">
         <Footer />
