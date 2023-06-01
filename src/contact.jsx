@@ -16,8 +16,6 @@ export default function Contact() {
   const [budjetToggle, setBudjetToggle] = useState(false);
   const [budjetValue, setBudjetValue] = useState(0);
   const [iconChoose, setIconChoose] = useState(1);
-  console.log(budjetValue);
-
   let iconChoosing = () => {
     if (iconChoose === 1) {
       return (
@@ -93,7 +91,15 @@ export default function Contact() {
   };
   return (
     <>
-      <div class="contact-container">
+      {/* // mohannad غيرت الديف الى فورم وضف الاتريبيوت اللازمة */}
+      <form
+        class="contact-container"
+        method="POST"
+        target="_self"
+        action="http://localhost/portfolio/back-end/contact.php"
+        enctype="multipart/form-data"
+      >
+        <input type="hidden" value={budjetValue} name="budget" />
         <p class="contact-head-st">A new message will be sent By email!</p>
         <p class="contact-head-nd">
           <span class="contact-to">To : </span> Sajaelramlawi@Gmail.Com
@@ -101,7 +107,7 @@ export default function Contact() {
         <div class="contact-content">
           <div class="content-head">
             <span class="content-head-span-st">subject : </span>
-            <input type="text" class="content-head-text-input" />
+            <input name="subject" type="text" class="content-head-text-input" />
             <span class="content-head-span-nd">Suggest an interview via :</span>
             <div className="contact-choosen-icon">
               <div className="up-down">
@@ -130,7 +136,7 @@ export default function Contact() {
           <p className="contact-parag-st">
             you can write a brief paragraph explaining what you want in your
             message, and you can also <br /> attach any relevant links
-            throughout your message. Additionally, if you would like to set a
+            throughout your message. Additionally, if you would like to set a{" "}
             <br /> budget for your request, simply click on the money icon
             below. <br /> When it comes to attaching files, please keep in mind
             the following guidelines: <br />
@@ -154,7 +160,7 @@ export default function Contact() {
           </p>
 
           <div className="contact-files">
-            <input type="file" className="upload-file" lang="EN" />
+            <input name="file" type="file" className="upload-file" lang="EN" />
             <div className="budjet-container">
               {budjetToggle ? null : (
                 <>
@@ -245,17 +251,25 @@ export default function Contact() {
               ) : null}
             </div>
             <div>
-              <input type="date" name="contact-date" className="contact-date" />
+              <input type="date" name="date" className="contact-date" />
             </div>
           </div>
         </div>
         <div class="email-box">
           <span class="email-box-span"> your email | </span>
-          <input type="email" class="container-email" />
-          <img src={send} alt="send" class="send-img" />
+          <input name="email" type="email" class="container-email" />
+          <button className="form-buttun" name="submit">
+            <img src={send} alt="send" class="send-img" />
+          </button>
         </div>
-      </div>
+      </form>
       <Footer />
     </>
   );
 }
+// mohannad fetch from contact.php
+fetch("http://localhost/portfolio/back-end/contact.php")
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+  });

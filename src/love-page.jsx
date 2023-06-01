@@ -121,8 +121,11 @@ export default function LovePage() {
         id="loveForm"
         className="love-form"
         method="POST"
-        encType="multipart/from-data"
-        onSubmit={handleSubmit}
+        // mohannad
+        target="_self"
+        action="http://localhost/portfolio/back-end/love.php"
+        // encType="multipart/from-data"
+        // onSubmit={handleSubmit}
       >
         <div className="love-st">
           <div className="love-line"></div>
@@ -494,3 +497,10 @@ export default function LovePage() {
     </div>
   );
 }
+
+// mohannad fetch from love.php C:\xampp\htdocs\portfolio\back-end
+fetch("http://localhost/portfolio/back-end/love.php")
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+  });

@@ -15,7 +15,7 @@ export default function SingleProjectPage() {
   return (
     <>
       <div>
-        <Link to="/services">
+        <Link to="/services" className="linkTo">
           <span className="oneproject-span-st">x</span>
           <img src={Ellips} alt="Ellips" className="oneproject-ellips" />
         </Link>
